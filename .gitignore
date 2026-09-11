@@ -1,0 +1,69 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/.vinext/
+/out/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+next-env.d.ts
+*.tsbuildinfo
+/dist/
+/.wrangler/
+# Checkout-local execution profile and tool state; never publish them.
+/.sites-runtime/
+/.agents/
+/.codex/
+/outputs/
+/work/
+
+# Unused bundled Sites starter files (the Vercel/Next.js app does not use these)
+/.openai/
+/build/
+/components/ui/
+/db/
+/drizzle/
+/examples/
+/hooks/
+/scripts/
+/vendor/
+/app/chatgpt-auth.ts
+/cloudflare-env.d.ts
+/components.json
+/drizzle.config.ts
+/lib/utils.ts
+/postcss.config.mjs
+/vite.config.ts
+/public/favicon.svg
+/public/file.svg
+/public/globe.svg
+/public/window.svg
