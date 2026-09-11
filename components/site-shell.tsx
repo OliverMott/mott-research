@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { ContactForm } from "@/components/contact-form";
 
 const inventions = [
   ["Light Shoes", "/light-shoes.php"], ["Board Games", "/board-games.php"],
@@ -46,9 +47,7 @@ export function Footer() {
     </div></section>
     <section><SectionTitle>Quick Contact</SectionTitle>
       <p>Tel:&nbsp;&nbsp;<a href="tel:+447740604660">07740 604660</a></p><p>Email:&nbsp;&nbsp;<a href="mailto:jhn.mott@gmail.com">jhn.mott@gmail.com</a></p>
-      <form className="quick-form" action="mailto:john@mottresearch.com" method="post" encType="text/plain">
-        <label>Name:<input name="name" autoComplete="name" /></label><label>Email<input name="email" type="email" autoComplete="email" /></label><label>Phone<input name="phone" type="tel" autoComplete="tel" /></label><button type="submit">Send</button>
-      </form>
+      <ContactForm />
     </section>
   </footer>;
 }
