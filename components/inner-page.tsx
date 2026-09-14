@@ -16,9 +16,17 @@ function Gallery({ images }: { images: NonNullable<PageData["gallery"]> }) {
   return <><h3 className="subheading">Images</h3><GalleryLightbox images={images} /></>;
 }
 
+function LogoGallery({ images }: { images: NonNullable<PageData["gallery"]> }) {
+  return <><h3 className="subheading">Images</h3><div className="logo-gallery">
+    {images.map((image) => <div className="logo-thumbnail" key={image.thumbnail}>
+      <Image className="logo-thumbnail-image" src={image.thumbnail} alt={image.alt} width={120} height={70} unoptimized={image.thumbnail.startsWith("http")} />
+    </div>)}
+  </div></>;
+}
+
 function VideoThumbnails({ videos }: { videos: NonNullable<PageData["sideVideos"]> }) {
   return <div className="thumbnail-videos">{videos.map(({ title, videoId }) =>
-    <a className="thumbnail-video" href={`https://www.youtube.com/watch?v=${videoId}`} key={videoId}>
+    <a className="thumbnail-video" href={`https://www.youtube.com/watch?v=${videoId}`} key={videoId} target="_blank" rel="noopener noreferrer">
       <span className="thumbnail-video-image"><Image src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`} alt="" fill sizes="(max-width: 760px) 100vw, 320px" /></span>
       <strong>{title}</strong>
     </a>
@@ -32,7 +40,7 @@ function Products({ items }: { items: NonNullable<PageData["products"]> }) {
 }
 
 function ContactDetails() {
-  return <div className="contact-details"><h3>Telephone</h3><a href="tel:+447740604660">07740 604660</a><h3>Email</h3><a href="mailto:john@mottresearch.com">john@mottresearch.com</a></div>;
+  return <div className="contact-details"><h3>Telephone</h3><a href="tel:+447740604660">07740 604660</a><h3>Email</h3><a href="mailto:john@mottresearch.com" target="_blank" rel="noopener noreferrer">john@mottresearch.com</a></div>;
 }
 
 function VideoPage({ page }: { page: PageData }) {
@@ -40,7 +48,7 @@ function VideoPage({ page }: { page: PageData }) {
     <div className="responsive-video"><iframe src={`https://www.youtube.com/embed/${page.videoId}`} title={page.heading} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div>
     <aside className="other-videos">
       <SectionTitle>Other Videos</SectionTitle>
-      <p className="youtube-copy">View the <a href="https://www.youtube.com/@mottresearchinvent/videos">Mott Research YouTube</a> Channel ...</p>
+      <p className="youtube-copy">View the <a href="https://www.youtube.com/@mottresearchinvent/videos" target="_blank" rel="noopener noreferrer">Mott Research YouTube</a> Channel ...</p>
       <div className="other-video-grid">{otherVideos.map(([title, source, date, href]) => <Link href={href} key={href} className="video-list-item"><strong>{title}</strong><span>{source}</span><small>{date}</small></Link>)}</div>
     </aside>
   </div>;
@@ -52,12 +60,12 @@ export function InnerPage({ page }: { page: PageData }) {
       {page.videoId ? <VideoPage page={page} /> : <>
         {page.image && <Image className="lead-image" src={page.image} alt="" width={page.image.includes("toy-square") ? 400 : 80} height={page.image.includes("toy-square") ? 300 : 80} />}
         <div className="copy inner-copy">{page.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-        {page.externalLink && <p><a className="text-link" href={page.externalLink.href}>{page.externalLink.label}</a></p>}
+        {page.externalLink && <p><a className="text-link" href={page.externalLink.href} target="_blank" rel="noopener noreferrer">{page.externalLink.label}</a></p>}
         {page.contact && <ContactDetails />}
         {page.products && <Products items={page.products} />}
-        {page.gallery && <Gallery images={page.gallery} />}
+        {page.gallery && (page.galleryMode === "logos" ? <LogoGallery images={page.gallery} /> : <Gallery images={page.gallery} />)}
       </>}
     </article>
-    {!page.videoId && <aside className="video-sidebar"><SectionTitle>Videos</SectionTitle><p className="youtube-copy">View the <a href="https://www.youtube.com/@mottresearchinvent/videos">Mott Research YouTube</a> Channel ...</p>{page.sideVideos ? <VideoThumbnails videos={page.sideVideos} /> : <VideoCards />}</aside>}
+    {!page.videoId && <aside className="video-sidebar"><SectionTitle>Videos</SectionTitle><p className="youtube-copy">View the <a href="https://www.youtube.com/@mottresearchinvent/videos" target="_blank" rel="noopener noreferrer">Mott Research YouTube</a> Channel ...</p>{page.sideVideos ? <VideoThumbnails videos={page.sideVideos} /> : <VideoCards />}</aside>}
   </main><Footer /></>;
 }

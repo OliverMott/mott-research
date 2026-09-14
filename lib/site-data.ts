@@ -14,6 +14,7 @@ export type PageData = {
   title: string; heading: string; paragraphs?: string[]; image?: string; gallery?: GalleryImage[];
   description?: string; keywords?: string; externalLink?: { label: string; href: string };
   contact?: boolean; products?: ProductCard[]; videoId?: string; videos?: boolean; sideVideos?: SideVideo[];
+  galleryMode?: "lightbox" | "logos";
 };
 
 export const pages: Record<string, PageData> = {
@@ -124,7 +125,7 @@ export const pages: Record<string, PageData> = {
       "Everyone has ideas but not everyone can take those ideas and make them into industry leading products.",
       "Mott Research works with businesses and individuals to help take new or existing products to a new level. With a combination of technical, business and market experience, Mott Research has been a trusted consultancy for companies across the world.",
       "Get in touch today to find out how Mott Research can help your products grow.",
-    ], gallery: [
+    ], galleryMode: "logos", gallery: [
       { thumbnail: galleryAsset("shell.png"), full: galleryAsset("shell-full.png"), alt: "Shell" },
       { thumbnail: galleryAsset("asics.png"), full: galleryAsset("asics-full.png"), alt: "Asics" },
       { thumbnail: galleryAsset("hallmark.png"), full: galleryAsset("hallmark-full.png"), alt: "Hallmark" },

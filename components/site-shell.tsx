@@ -46,7 +46,7 @@ export function Footer() {
       <div><Link href="/contact.php">Contact</Link><Link href="/videos-scrumpit.php">Videos</Link><Link href="/auction/images">Auction Images</Link></div>
     </div></section>
     <section><SectionTitle>Quick Contact</SectionTitle>
-      <p>Tel:&nbsp;&nbsp;<a href="tel:+447740604660">07740 604660</a></p><p>Email:&nbsp;&nbsp;<a href="mailto:jhn.mott@gmail.com">jhn.mott@gmail.com</a></p>
+      <p>Tel:&nbsp;&nbsp;<a href="tel:+447740604660">07740 604660</a></p><p>Email:&nbsp;&nbsp;<a href="mailto:jhn.mott@gmail.com" target="_blank" rel="noopener noreferrer">jhn.mott@gmail.com</a></p>
       <ContactForm />
     </section>
   </footer>;
