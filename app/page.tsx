@@ -15,7 +15,7 @@ export default function Home() {
             <span className="smithsonian-logo"><Image src="/images/smithsonian-logo.webp" alt="Smithsonian" width={332} height={147} priority /></span>
           </Link>
           <Link className="hero-slide hero-slide-2 hero-auction" href="/auction/images" aria-label="View recent Mott Research auction images">
-            <span className="auction-copy">View recent Mott Research Auction</span>
+            <span className="auction-copy">View images from the recent Mott Research Auction</span>
             <span className="auction-art"><Image src="/images/auction-banner.webp" alt="Mott Research products displayed as auction photographs" width={1600} height={534} /></span>
           </Link>
           {slides.map((slide, index) => (
