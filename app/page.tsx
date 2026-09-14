@@ -11,7 +11,7 @@ export default function Home() {
       <main className="site-width">
         <section className="hero" aria-label="Mott Research innovations">
           <Link className="hero-slide hero-slide-1 hero-smithsonian" href="/videos-mottik-dna-smithsonian-tv.php" aria-label="Watch Mottik DNA on Smithsonian TV">
-            <span className="smithsonian-copy">Watch Mottik DNA<br />on Smithsonian TV</span>
+            <span className="smithsonian-copy"><span>Watch Mottik DNA</span><span>on Smithsonian TV</span></span>
             <span className="smithsonian-logo"><Image src="/images/smithsonian-logo.webp" alt="Smithsonian" width={332} height={147} priority /></span>
           </Link>
           {slides.map((slide, index) => (
