@@ -48,7 +48,7 @@ function VideoPage({ page }: { page: PageData }) {
     <div className="responsive-video"><iframe src={`https://www.youtube.com/embed/${page.videoId}`} title={page.heading} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div>
     <aside className="other-videos">
       <SectionTitle>Other Videos</SectionTitle>
-      <p className="youtube-copy">View the <a href="https://www.youtube.com/@mottresearchinvent/videos" target="_blank" rel="noopener noreferrer">Mott Research YouTube</a> Channel ...</p>
+      <p className="youtube-copy">View the <a href="https://www.youtube.com/@mottresearchinvent/videos" target="_blank" rel="noopener noreferrer">Mott Research YouTube</a> Channel</p>
       <div className="other-video-grid">{otherVideos.map(([title, source, date, href]) => <Link href={href} key={href} className="video-list-item"><strong>{title}</strong><span>{source}</span><small>{date}</small></Link>)}</div>
     </aside>
   </div>;
@@ -66,6 +66,6 @@ export function InnerPage({ page }: { page: PageData }) {
         {page.gallery && (page.galleryMode === "logos" ? <LogoGallery images={page.gallery} /> : <Gallery images={page.gallery} />)}
       </>}
     </article>
-    {!page.videoId && <aside className="video-sidebar"><SectionTitle>Videos</SectionTitle><p className="youtube-copy">View the <a href="https://www.youtube.com/@mottresearchinvent/videos" target="_blank" rel="noopener noreferrer">Mott Research YouTube</a> Channel ...</p>{page.sideVideos ? <VideoThumbnails videos={page.sideVideos} /> : <VideoCards />}</aside>}
+    {!page.videoId && <aside className="video-sidebar"><SectionTitle>Videos</SectionTitle><p className="youtube-copy">View the <a href="https://www.youtube.com/@mottresearchinvent/videos" target="_blank" rel="noopener noreferrer">Mott Research YouTube</a> Channel</p>{page.sideVideos ? <VideoThumbnails videos={page.sideVideos} /> : <VideoCards />}</aside>}
   </main><Footer /></>;
 }

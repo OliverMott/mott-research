@@ -27,7 +27,7 @@ export default function Home() {
           </article>
           <article>
             <SectionTitle>Videos</SectionTitle>
-            <p className="youtube-copy">View the <a href="https://www.youtube.com/@mottresearchinvent/videos" target="_blank" rel="noopener noreferrer">Mott Research YouTube</a> Channel ...</p>
+            <p className="youtube-copy">View the <a href="https://www.youtube.com/@mottresearchinvent/videos" target="_blank" rel="noopener noreferrer">Mott Research YouTube</a> Channel</p>
             <VideoCards compact />
             <Link className="more-link" href="/videos-scrumpit.php">&gt; more videos</Link>
           </article>

@@ -42,7 +42,7 @@ main.site-width, footer.site-width { padding-inline: 40px; background: #fff; }
 .section-title { display: flex; align-items: center; gap: 5px; margin: 0 0 31px; padding: 17px 5px 14px; border-bottom: 1px solid var(--line); color: #696969; font-size: 21px; font-weight: 400; line-height: 1.2; text-transform: uppercase; }
 .section-title span { margin-left: -1px; font: 30px/16px Arial, sans-serif; color: #666; }
 .copy { padding: 0 8px; }.copy p { margin: 0 0 24px; }
-.youtube-copy { margin: 0 0 26px; text-align: center; }.youtube-copy a, .footer p a { color: var(--red); }
+.youtube-copy { margin: 0 0 26px; text-align: left; }.youtube-copy a, .footer p a { color: var(--red); }
 .more-link { display: inline-block; margin: 2px 8px 24px; color: var(--red); font-size: 14px; }
 .video-cards { display: grid; gap: 15px; }
 .video-card {
