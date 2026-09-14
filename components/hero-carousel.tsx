@@ -8,7 +8,7 @@ const slides = [
   {
     href: "/videos-mottik-dna-smithsonian-tv.php",
     label: "Watch Mottik DNA on Smithsonian TV",
-    copy: <><span>Watch Mottik DNA</span><span>on Smithsonian TV</span></>,
+    copy: "Watch Mottik DNA on Smithsonian TV",
     image: "/images/smithsonian-logo.webp",
     alt: "Smithsonian",
     variant: "smithsonian",
@@ -84,7 +84,7 @@ export function HeroCarousel() {
             aria-hidden={!isActive}
             tabIndex={isActive ? 0 : -1}
           >
-            <span className={`hero-copy${isSmithsonian ? " smithsonian-copy" : ""}`}>{slide.copy}</span>
+            <span className="hero-copy">{slide.copy}</span>
             {isSmithsonian ? (
               <span className="smithsonian-logo">
                 <Image src={slide.image} alt={slide.alt} width={332} height={147} priority />
