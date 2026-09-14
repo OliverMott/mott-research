@@ -1,6 +1,11 @@
 export const defaultDescription = "Innovation and Invention in business, Mott Research leads the way in business innovation. Mott Research focuses on inventing and innovation.";
 export const defaultKeywords = "innovation,invention,inventions,inventors,inventing,innovated,innovating,business innovation,innovation business,innovation and business,innovation in business,business and innovation,innov,inven,inventive,world of invention,a new invention,new invention,invention new,inventions new,new inventions,invents";
 const legacyTypoKeywords = "innovation,invention,inventions,inventors,inventing,innovated,inninnovating,business innovation,innovation business,innovation and business,innovation in business,business and innovation,innov,inven,inventive,world of invention,a new invention,new invention,invention new,inventions new,new inventions,invents";
+const galleryBaseUrl = process.env.R2_PUBLIC_URL?.replace(/\/+$/, "");
+
+export function galleryAsset(filename: string) {
+  return galleryBaseUrl ? `${galleryBaseUrl}/images/${filename}` : `/images/${filename}`;
+}
 
 export type ProductCard = { title: string; text: string; href: string; image: string };
 export type SideVideo = { title: string; videoId: string };
@@ -48,7 +53,7 @@ export const pages: Record<string, PageData> = {
       "Using new technologies in light weight electric plastic filaments, Mott Research patented a unique thin, light weight film which produces a small electrical charge from kinetic energy. Placed inside the heel of the shoe, the impact of the heel on the special film creates enough energy for a small light at the back of the heel.",
       "Unlike a battery the film can last for more than the average life of a sports trainer and given the electric films size and weight, it had no impact to the style and design of the trainer.",
     ], gallery: [
-      { thumbnail: "/images/light-gallery.png", full: "/images/light-full.png", alt: "Light-up shoe" },
+      { thumbnail: galleryAsset("light-gallery.png"), full: galleryAsset("light-full.png"), alt: "Light-up shoe" },
     ], videos: true,
     sideVideos: [
       { title: "The inspiration behind the Light Up Shoes", videoId: "1zroBdKsVTE" },
@@ -65,10 +70,10 @@ export const pages: Record<string, PageData> = {
       "As a traditional board game or as a mobile app, Scrumpit is a new take on word games which children and adults can't put down.",
       "Scrumpit is an ‘Old English’ word which means to steal your neighbours’ fruit – The game is for 2, 3 or 4 players, involving tactics, strategy and wordplay with the option of scoring for yourself and/or frustrating other players by stealing their letters.",
     ], gallery: [
-      { thumbnail: "/images/board-apps.jpg", full: "/images/board-3-full.jpg", alt: "Scrumpit mobile apps" },
-      { thumbnail: "/images/board-game.jpg", full: "/images/board-2-full.jpg", alt: "Scrumpit board game" },
-      { thumbnail: "/images/board-lrg-thumb.jpg", full: "/images/board-1-full.jpg", alt: "Scrumpit board and pieces" },
-      { thumbnail: "/images/board-full.jpg", full: "/images/board-4-full.jpg", alt: "Full Scrumpit game" },
+      { thumbnail: galleryAsset("board-apps.jpg"), full: galleryAsset("board-3-full.jpg"), alt: "Scrumpit mobile apps" },
+      { thumbnail: galleryAsset("board-game.jpg"), full: galleryAsset("board-2-full.jpg"), alt: "Scrumpit board game" },
+      { thumbnail: galleryAsset("board-lrg-thumb.jpg"), full: galleryAsset("board-1-full.jpg"), alt: "Scrumpit board and pieces" },
+      { thumbnail: galleryAsset("board-full.jpg"), full: galleryAsset("board-4-full.jpg"), alt: "Full Scrumpit game" },
     ], videos: true,
   },
   "graphite-racquets.php": {
@@ -77,11 +82,11 @@ export const pages: Record<string, PageData> = {
       "Mott Research played a leading role in the introduction of graphite technology in badminton racquets.",
       "Players of this popular mainstream sport demanded lighter, more durable racquets to gain a competitive advantage, and the introduction of a graphite frame was a major improvement to the heavier frames used previously.",
     ], gallery: [
-      { thumbnail: "/images/racket-5.png", full: "/images/racket-5-full.png", alt: "Graphite badminton racquet" },
-      { thumbnail: "/images/racket-4.png", full: "/images/racket-4-full.png", alt: "Graphite racquet design" },
-      { thumbnail: "/images/racket-3.png", full: "/images/racket-3-full.png", alt: "Graphite racquet detail" },
-      { thumbnail: "/images/racket-2.png", full: "/images/racket-2-full.png", alt: "Graphite badminton racquet detail" },
-      { thumbnail: "/images/racket-1.png", full: "/images/racket-1-full.png", alt: "Mott Research graphite racquet" },
+      { thumbnail: galleryAsset("racket-5.png"), full: galleryAsset("racket-5-full.png"), alt: "Graphite badminton racquet" },
+      { thumbnail: galleryAsset("racket-4.png"), full: galleryAsset("racket-4-full.png"), alt: "Graphite racquet design" },
+      { thumbnail: galleryAsset("racket-3.png"), full: galleryAsset("racket-3-full.png"), alt: "Graphite racquet detail" },
+      { thumbnail: galleryAsset("racket-2.png"), full: galleryAsset("racket-2-full.png"), alt: "Graphite badminton racquet detail" },
+      { thumbnail: galleryAsset("racket-1.png"), full: galleryAsset("racket-1-full.png"), alt: "Mott Research graphite racquet" },
     ], videos: true,
   },
   "graphite-golf-clubs.php": {
@@ -101,10 +106,10 @@ export const pages: Record<string, PageData> = {
       "After an explosion across the toy brick industry including the educational sector, the original Mottik toy design has been incorporated into the fast selling toy brick Morphun.",
       "Morphun products have won ten GOLD or winners awards and twelve other major educational or retail product awards and are available in over 50 countries world wide.",
     ], externalLink: { label: "Find out more about Morphun here.", href: "https://www.morphun.com/" }, gallery: [
-      { thumbnail: "/images/toy-1.jpg", full: "/images/toy-1-full.jpg", alt: "Mottik toy bricks model" },
-      { thumbnail: "/images/toy-2.jpg", full: "/images/toy-2-full.jpg", alt: "Mottik construction pieces" },
-      { thumbnail: "/images/toy-3.jpg", full: "/images/toy-3-full.jpg", alt: "Mottik toy brick set" },
-      { thumbnail: "/images/toy-4.jpg", full: "/images/toy-4-full.jpg", alt: "Mottik sumo model" },
+      { thumbnail: galleryAsset("toy-1.jpg"), full: galleryAsset("toy-1-full.jpg"), alt: "Mottik toy bricks model" },
+      { thumbnail: galleryAsset("toy-2.jpg"), full: galleryAsset("toy-2-full.jpg"), alt: "Mottik construction pieces" },
+      { thumbnail: galleryAsset("toy-3.jpg"), full: galleryAsset("toy-3-full.jpg"), alt: "Mottik toy brick set" },
+      { thumbnail: galleryAsset("toy-4.jpg"), full: galleryAsset("toy-4-full.jpg"), alt: "Mottik sumo model" },
     ], videos: true,
   },
   "popular-inventions.php": {
@@ -120,10 +125,10 @@ export const pages: Record<string, PageData> = {
       "Mott Research works with businesses and individuals to help take new or existing products to a new level. With a combination of technical, business and market experience, Mott Research has been a trusted consultancy for companies across the world.",
       "Get in touch today to find out how Mott Research can help your products grow.",
     ], gallery: [
-      { thumbnail: "/images/shell.png", full: "/images/shell-full.png", alt: "Shell" },
-      { thumbnail: "/images/asics.png", full: "/images/asics-full.png", alt: "Asics" },
-      { thumbnail: "/images/hallmark.png", full: "/images/hallmark-full.png", alt: "Hallmark" },
-      { thumbnail: "/images/marks-and-spencer.png", full: "/images/marks-and-spencer-full.png", alt: "Marks and Spencer" },
+      { thumbnail: galleryAsset("shell.png"), full: galleryAsset("shell-full.png"), alt: "Shell" },
+      { thumbnail: galleryAsset("asics.png"), full: galleryAsset("asics-full.png"), alt: "Asics" },
+      { thumbnail: galleryAsset("hallmark.png"), full: galleryAsset("hallmark-full.png"), alt: "Hallmark" },
+      { thumbnail: galleryAsset("marks-and-spencer.png"), full: galleryAsset("marks-and-spencer-full.png"), alt: "Marks and Spencer" },
     ], videos: true,
   },
   "contact.php": { title: "Mott Research - Contact", heading: "Contact", keywords: legacyTypoKeywords, contact: true, videos: true },

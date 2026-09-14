@@ -43,7 +43,7 @@ export function Footer() {
     <section><SectionTitle>Site Map</SectionTitle><div className="sitemap">
       <div><Link href="/">Home</Link><Link href="/about.php">About</Link><Link href="/consultation.php">Consultation</Link></div>
       <div><Link href="/invention.php">Inventions</Link>{inventions.slice(0, 5).map(([label, href]) => <Link className="minor" key={href} href={href}>{label}</Link>)}</div>
-      <div><Link href="/contact.php">Contact</Link><Link href="/videos-scrumpit.php">Videos</Link></div>
+      <div><Link href="/contact.php">Contact</Link><Link href="/videos-scrumpit.php">Videos</Link><Link href="/auction/images">Auction Images</Link></div>
     </div></section>
     <section><SectionTitle>Quick Contact</SectionTitle>
       <p>Tel:&nbsp;&nbsp;<a href="tel:+447740604660">07740 604660</a></p><p>Email:&nbsp;&nbsp;<a href="mailto:jhn.mott@gmail.com">jhn.mott@gmail.com</a></p>
