@@ -49,9 +49,12 @@ export function GalleryLightbox({ images, batchSize = DEFAULT_BATCH_SIZE }: { im
 
   return <>
     <div className="gallery">{visibleImages.map((image, index) =>
-      <button type="button" key={`${image.full}-${index}`} onClick={() => setActiveIndex(index)} aria-label={`Open image ${index + 1} of ${images.length}`}>
-        <Image src={image.thumbnail} alt={image.alt} width={100} height={100} loading="lazy" sizes="132px" unoptimized={image.thumbnail.startsWith("http")} />
-      </button>
+      <figure className="gallery-item" key={`${image.full}-${index}`}>
+        <button type="button" onClick={() => setActiveIndex(index)} aria-label={`Open image ${index + 1} of ${images.length}`}>
+          <Image src={image.thumbnail} alt={image.alt} width={100} height={100} loading="lazy" sizes="132px" unoptimized={image.thumbnail.startsWith("http")} />
+        </button>
+        {image.caption && <figcaption>{image.caption}</figcaption>}
+      </figure>
     )}</div>
 
     {remainingCount > 0 && <div ref={loadMoreTrigger} className="gallery-load-status" aria-live="polite">
@@ -65,7 +68,7 @@ export function GalleryLightbox({ images, batchSize = DEFAULT_BATCH_SIZE }: { im
       {images.length > 1 && <button type="button" className="lightbox-control lightbox-previous" onClick={() => setActiveIndex((activeIndex - 1 + images.length) % images.length)} aria-label="Previous image">‹</button>}
       <figure>
         <Image className="lightbox-image" src={images[activeIndex].full} alt={images[activeIndex].alt} width={1200} height={900} sizes="90vw" priority unoptimized={images[activeIndex].full.startsWith("http")} />
-        <figcaption>{activeIndex + 1} of {images.length}</figcaption>
+        <figcaption>{images[activeIndex].caption ? `${images[activeIndex].caption} — ` : ""}{activeIndex + 1} of {images.length}</figcaption>
       </figure>
       {images.length > 1 && <button type="button" className="lightbox-control lightbox-next" onClick={() => setActiveIndex((activeIndex + 1) % images.length)} aria-label="Next image">›</button>}
     </div>}

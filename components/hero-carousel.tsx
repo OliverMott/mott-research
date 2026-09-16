@@ -22,14 +22,6 @@ const slides = [
     variant: "auction",
   },
   {
-    href: "/mottik-dna.php",
-    label: "Building blocks for children. Educational and fun!",
-    copy: "Building blocks for children. Educational and fun!",
-    image: "/images/hero-blocks.webp",
-    alt: "Children building with Morphun construction bricks",
-    variant: "standard",
-  },
-  {
     href: "/light-shoes.php",
     label: "Light up shoes: a new era in running shoes",
     copy: "Light up shoes… A new era in running shoes",

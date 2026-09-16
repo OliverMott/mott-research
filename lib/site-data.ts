@@ -9,7 +9,7 @@ export function galleryAsset(filename: string) {
 
 export type ProductCard = { title: string; text: string; href: string; image: string };
 export type SideVideo = { title: string; videoId: string };
-export type GalleryImage = { thumbnail: string; full: string; alt: string };
+export type GalleryImage = { thumbnail: string; full: string; alt: string; caption?: string };
 export type PageData = {
   title: string; heading: string; paragraphs?: string[]; image?: string; gallery?: GalleryImage[];
   description?: string; keywords?: string; externalLink?: { label: string; href: string };
@@ -111,6 +111,12 @@ export const pages: Record<string, PageData> = {
       { thumbnail: galleryAsset("toy-2.jpg"), full: galleryAsset("toy-2-full.jpg"), alt: "Mottik construction pieces" },
       { thumbnail: galleryAsset("toy-3.jpg"), full: galleryAsset("toy-3-full.jpg"), alt: "Mottik toy brick set" },
       { thumbnail: galleryAsset("toy-4.jpg"), full: galleryAsset("toy-4-full.jpg"), alt: "Mottik sumo model" },
+      {
+        thumbnail: "/images/john-giant-mighty-mottik.jpg",
+        full: "/images/john-giant-mighty-mottik.jpg",
+        alt: "John testing the Giant Mighty Mottik range in a swimming pool",
+        caption: "John having fun testing the Giant Mighty Mottik range. Available soon.",
+      },
     ], videos: true,
   },
   "popular-inventions.php": {
