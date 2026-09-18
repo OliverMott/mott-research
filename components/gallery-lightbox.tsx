@@ -5,14 +5,41 @@ import { useEffect, useRef, useState } from "react";
 import type { GalleryImage } from "@/lib/site-data";
 
 const DEFAULT_BATCH_SIZE = 48;
+const SWIPE_THRESHOLD = 50;
 
 export function GalleryLightbox({ images, batchSize = DEFAULT_BATCH_SIZE }: { images: GalleryImage[]; batchSize?: number }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [visibleCount, setVisibleCount] = useState(() => Math.min(batchSize, images.length));
   const loadMoreTrigger = useRef<HTMLDivElement>(null);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
   const isOpen = activeIndex !== null;
   const visibleImages = images.slice(0, visibleCount);
   const remainingCount = images.length - visibleCount;
+
+  function handleTouchStart(event: React.TouchEvent<HTMLElement>) {
+    const touch = event.touches[0];
+    touchStart.current = touch ? { x: touch.clientX, y: touch.clientY } : null;
+  }
+
+  function handleTouchEnd(event: React.TouchEvent<HTMLElement>) {
+    const start = touchStart.current;
+    const touch = event.changedTouches[0];
+    touchStart.current = null;
+
+    if (!start || !touch || images.length < 2) return;
+
+    const horizontalDistance = touch.clientX - start.x;
+    const verticalDistance = touch.clientY - start.y;
+
+    if (Math.abs(horizontalDistance) < SWIPE_THRESHOLD || Math.abs(horizontalDistance) <= Math.abs(verticalDistance)) return;
+
+    setActiveIndex((current) => current === null
+      ? null
+      : horizontalDistance < 0
+        ? (current + 1) % images.length
+        : (current - 1 + images.length) % images.length
+    );
+  }
 
   useEffect(() => {
     if (!isOpen) return;
@@ -66,7 +93,7 @@ export function GalleryLightbox({ images, batchSize = DEFAULT_BATCH_SIZE }: { im
     }}>
       <button type="button" className="lightbox-close" onClick={() => setActiveIndex(null)} aria-label="Close slideshow">×</button>
       {images.length > 1 && <button type="button" className="lightbox-control lightbox-previous" onClick={() => setActiveIndex((activeIndex - 1 + images.length) % images.length)} aria-label="Previous image">‹</button>}
-      <figure>
+      <figure onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         <Image className="lightbox-image" src={images[activeIndex].full} alt={images[activeIndex].alt} width={1200} height={900} sizes="90vw" priority unoptimized={images[activeIndex].full.startsWith("http")} />
         <figcaption>{images[activeIndex].caption ? `${images[activeIndex].caption} — ` : ""}{activeIndex + 1} of {images.length}</figcaption>
       </figure>
