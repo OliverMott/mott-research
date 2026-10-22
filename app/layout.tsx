@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mottresearch.com"),
+  metadataBase: new URL("https://www.mottresearch.com"),
   title: "Mott Research - Inventing, Consulting & Product Development",
   description:
     "Mott Research is a well established invention, product development & consultancy company.",

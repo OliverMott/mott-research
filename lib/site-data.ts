@@ -18,7 +18,7 @@ export type PageData = {
 };
 
 export const pages: Record<string, PageData> = {
-  "about.php": {
+  "about": {
     title: "Mott Research - About Innovation & Invention", heading: "About Mott Research",
     keywords: legacyTypoKeywords,
     paragraphs: [
@@ -29,7 +29,7 @@ export const pages: Record<string, PageData> = {
       "Mott Research's aim is to continue inventing and developing products in an ever changing world for everyone to enjoy.",
     ], videos: true,
   },
-  "invention.php": {
+  "invention": {
     title: "Mott Research - Inventing", heading: "Invention", image: "/images/scrumpit-board-game.jpg",
     paragraphs: [
       "Mott Research has been at the forefront of UK invention for the last 40 years.",
@@ -37,15 +37,15 @@ export const pages: Record<string, PageData> = {
       "Award winning inventions from Mott Research:",
     ],
     products: [
-      { title: "Scrumpit - Board Games", text: "Invented a new type of word game, available as a board game or mobile game.", href: "/board-games.php", image: "/images/scrumpit-board-game.jpg" },
-      { title: "Light Up Shoes", text: "Creator of the first ever light up shoes", href: "/light-shoes.php", image: "/images/shoes-small.png" },
-      { title: "Mottik DNA", text: "Designed a new type of connecting toy brick", href: "/mottik-dna.php", image: "/images/blocks-small.png" },
-      { title: "Graphite Golf Clubs", text: "Created one of the first graphite golf club shafts", href: "/graphite-golf-clubs.php", image: "/images/golf-small.png" },
-      { title: "Graphite Racquets", text: "Created one of the first graphite badminton racquets", href: "/graphite-racquets.php", image: "/images/rackets-small.png" },
-      { title: "Popular Inventions", text: "Invented products across a range of industries", href: "/popular-inventions.php", image: "/images/popular-small.png" },
+      { title: "Scrumpit - Board Games", text: "Invented a new type of word game, available as a board game or mobile game.", href: "/board-games", image: "/images/scrumpit-board-game.jpg" },
+      { title: "Light Up Shoes", text: "Creator of the first ever light up shoes", href: "/light-shoes", image: "/images/shoes-small.png" },
+      { title: "Mottik DNA", text: "Designed a new type of connecting toy brick", href: "/mottik-dna", image: "/images/blocks-small.png" },
+      { title: "Graphite Golf Clubs", text: "Created one of the first graphite golf club shafts", href: "/graphite-golf-clubs", image: "/images/golf-small.png" },
+      { title: "Graphite Racquets", text: "Created one of the first graphite badminton racquets", href: "/graphite-racquets", image: "/images/rackets-small.png" },
+      { title: "Popular Inventions", text: "Invented products across a range of industries", href: "/popular-inventions", image: "/images/popular-small.png" },
     ], videos: true,
   },
-  "light-shoes.php": {
+  "light-shoes": {
     title: "Mott Research - Inventing Light Shoes", heading: "About Mott Research", image: "/images/shoes-square.png",
     paragraphs: [
       "One of the biggest inventions from Mott Research, the Light Shoe.",
@@ -64,7 +64,7 @@ export const pages: Record<string, PageData> = {
       { title: "The Light Up Shoe – Turned down by the big Footware Brands in the ’90s", videoId: "bcwGNNnfdrQ" },
     ],
   },
-  "board-games.php": {
+  "board-games": {
     title: "Mott Research - Inventing Board Games", heading: "Board Games - Scrumpit", image: "/images/board-square.jpg",
     paragraphs: [
       "Mott Research expands its portfolio in the board games industry with a new and hugely successful board game, Scrumpit.",
@@ -77,7 +77,7 @@ export const pages: Record<string, PageData> = {
       { thumbnail: galleryAsset("board-full.jpg"), full: galleryAsset("board-4-full.jpg"), alt: "Full Scrumpit game" },
     ], videos: true,
   },
-  "graphite-racquets.php": {
+  "graphite-racquets": {
     title: "Mott Research - Inventing Graphite Racquets", heading: "Graphite Racquets", image: "/images/rackets-square.png",
     paragraphs: [
       "Mott Research played a leading role in the introduction of graphite technology in badminton racquets.",
@@ -90,7 +90,7 @@ export const pages: Record<string, PageData> = {
       { thumbnail: galleryAsset("racket-1.png"), full: galleryAsset("racket-1-full.png"), alt: "Mott Research graphite racquet" },
     ], videos: true,
   },
-  "graphite-golf-clubs.php": {
+  "graphite-golf-clubs": {
     title: "Mott Research - Inventing Graphite Golf Clubs", heading: "Graphite Golf Clubs", image: "/images/golf-square.png",
     paragraphs: [
       "Demand in golfing exploded during the 20th century and with it came demand for more flexible, durable golf clubs.",
@@ -98,7 +98,7 @@ export const pages: Record<string, PageData> = {
       "Mott Research was at the forefront of this new advancement of golf shafts.",
     ], videos: true,
   },
-  "mottik-dna.php": {
+  "mottik-dna": {
     title: "Mott Research - Mottik DNA", heading: "Mottik DNA", image: "/images/toy-square.jpg",
     paragraphs: [
       "Mott Research has had a long and successful history in the children's toy brick industry.",
@@ -119,11 +119,11 @@ export const pages: Record<string, PageData> = {
       },
     ], videos: true,
   },
-  "popular-inventions.php": {
+  "popular-inventions": {
     title: "Mott Research - Popular Inventions", heading: "Popular Inventions", image: "/images/popular-square.png",
     paragraphs: ["Mott Research has invented new ideas and products across a range of industries.", "From sports equipment, toys, board games and safety devices, Mott Research takes ideas and turns them into award winning products."], videos: true,
   },
-  "consultation.php": {
+  "consultation": {
     title: "Mott Research - Product Consultation", heading: "Consultation",
     description: "Product development consultant, Mott Research is a well established product development consultancy company. Use Mott Research to consult on product development using innovation and invention.",
     keywords: "product development,product development consultant,innovation,invention,inventions,inventors,inventing,innovated,innovating,business innovation,innovation business,innovation and business,innovation in business,business and innovation,innov,inven,inventive",
@@ -138,10 +138,10 @@ export const pages: Record<string, PageData> = {
       { thumbnail: galleryAsset("marks-and-spencer.png"), full: galleryAsset("marks-and-spencer-full.png"), alt: "Marks and Spencer" },
     ], videos: true,
   },
-  "contact.php": { title: "Mott Research - Contact", heading: "Contact", keywords: legacyTypoKeywords, contact: true, videos: true },
-  "videos-mottik-dna-smithsonian-tv.php": { title: "Mott Research - Mottik DNA Smithsonian TV", heading: "Videos - Mottik DNA Smithsonian TV", videoId: "I1khEv62Mkg" },
-  "videos-light-up-trainers.php": { title: "Mott Research - Light shoe videos", heading: "Videos - Light Up Shoes", videoId: "jVRqduAuPq4" },
-  "videos-scrumpit.php": { title: "Mott Research - Board games Scrumpit video", heading: "Videos - Scrumpit", videoId: "L3QoMQqCXF4" },
-  "videos-toy-bricks-mottik.php": { title: "Mott Research - Mott Research overview video", heading: "Videos - Mottik - Toy Bricks", videoId: "0x-xSAMCwFs" },
-  "videos-mott-research-preview.php": { title: "Mott Research - Toy Bricks video", heading: "Videos - Mott Research Preview", videoId: "WTFf3Q3Rkv4" },
+  "contact": { title: "Mott Research - Contact", heading: "Contact", keywords: legacyTypoKeywords, contact: true, videos: true },
+  "videos-mottik-dna-smithsonian-tv": { title: "Mott Research - Mottik DNA Smithsonian TV", heading: "Videos - Mottik DNA Smithsonian TV", videoId: "I1khEv62Mkg" },
+  "videos-light-up-trainers": { title: "Mott Research - Light shoe videos", heading: "Videos - Light Up Shoes", videoId: "jVRqduAuPq4" },
+  "videos-scrumpit": { title: "Mott Research - Board games Scrumpit video", heading: "Videos - Scrumpit", videoId: "L3QoMQqCXF4" },
+  "videos-toy-bricks-mottik": { title: "Mott Research - Mott Research overview video", heading: "Videos - Mottik - Toy Bricks", videoId: "0x-xSAMCwFs" },
+  "videos-mott-research-preview": { title: "Mott Research - Toy Bricks video", heading: "Videos - Mott Research Preview", videoId: "WTFf3Q3Rkv4" },
 };

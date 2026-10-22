@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    href: "/videos-mottik-dna-smithsonian-tv.php",
+    href: "/videos-mottik-dna-smithsonian-tv",
     label: "Watch Mottik DNA on Smithsonian TV",
     copy: "Watch Mottik DNA on Smithsonian TV",
     image: "/images/smithsonian-logo.webp",
@@ -22,7 +22,7 @@ const slides = [
     variant: "auction",
   },
   {
-    href: "/light-shoes.php",
+    href: "/light-shoes",
     label: "Light up shoes: a new era in running shoes",
     copy: "Light up shoes… A new era in running shoes",
     image: "/images/hero-shoes.webp",
@@ -30,7 +30,7 @@ const slides = [
     variant: "standard",
   },
   {
-    href: "/graphite-racquets.php",
+    href: "/graphite-racquets",
     label: "The first commercial graphite badminton racquets",
     copy: "The first commercial graphite badminton racquets",
     image: "/images/hero-rackets.webp",

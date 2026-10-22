@@ -5,11 +5,11 @@ import { Footer, Header, SectionTitle, VideoCards } from "@/components/site-shel
 import { GalleryLightbox } from "@/components/gallery-lightbox";
 
 const otherVideos = [
-  ["Mottik DNA Smithsonian TV", "Smithsonian TV", "aired: Jan 1996", "/videos-mottik-dna-smithsonian-tv.php"],
-  ["Light Up Shoes", "BBC Tomorrows World", "aired: 1992", "/videos-light-up-trainers.php"],
-  ["Scrumpit", "Promo video", "July 2015", "/videos-scrumpit.php"],
-  ["Mottik Toy Bricks", "ITV GIMME5", "aired: 1995", "/videos-toy-bricks-mottik.php"],
-  ["Mott Research Preview", "BEYOND 2000", "aired: Jan 1990", "/videos-mott-research-preview.php"],
+  ["Mottik DNA Smithsonian TV", "Smithsonian TV", "aired: Jan 1996", "/videos-mottik-dna-smithsonian-tv"],
+  ["Light Up Shoes", "BBC Tomorrows World", "aired: 1992", "/videos-light-up-trainers"],
+  ["Scrumpit", "Promo video", "July 2015", "/videos-scrumpit"],
+  ["Mottik Toy Bricks", "ITV GIMME5", "aired: 1995", "/videos-toy-bricks-mottik"],
+  ["Mott Research Preview", "BEYOND 2000", "aired: Jan 1990", "/videos-mott-research-preview"],
 ] as const;
 
 function Gallery({ images }: { images: NonNullable<PageData["gallery"]> }) {

@@ -5,6 +5,7 @@ import type { GalleryImage } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Mott Research Auction",
+  alternates: { canonical: "/auction/images" },
   description: "View images of Mott Research products featured at Andrew Smith & Son auction house.",
 };
 
