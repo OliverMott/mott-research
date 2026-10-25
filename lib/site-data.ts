@@ -1,3 +1,5 @@
+import mottikImages from "./mottik-images.json";
+
 export const defaultDescription = "Innovation and Invention in business, Mott Research leads the way in business innovation. Mott Research focuses on inventing and innovation.";
 export const defaultKeywords = "innovation,invention,inventions,inventors,inventing,innovated,innovating,business innovation,innovation business,innovation and business,innovation in business,business and innovation,innov,inven,inventive,world of invention,a new invention,new invention,invention new,inventions new,new inventions,invents";
 const legacyTypoKeywords = "innovation,invention,inventions,inventors,inventing,innovated,inninnovating,business innovation,innovation business,innovation and business,innovation in business,business and innovation,innov,inven,inventive,world of invention,a new invention,new invention,invention new,inventions new,new inventions,invents";
@@ -117,6 +119,7 @@ export const pages: Record<string, PageData> = {
         alt: "John testing the Giant Mighty Mottik range in a swimming pool",
         caption: "John having fun testing the Giant Mighty Mottik range. Available soon.",
       },
+      ...mottikImages,
     ], videos: true,
   },
   "popular-inventions": {
