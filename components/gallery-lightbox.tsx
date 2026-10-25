@@ -80,7 +80,6 @@ export function GalleryLightbox({ images, batchSize = DEFAULT_BATCH_SIZE }: { im
         <button type="button" onClick={() => setActiveIndex(index)} aria-label={`Open image ${index + 1} of ${images.length}`}>
           <Image src={image.thumbnail} alt={image.alt} width={100} height={100} loading="lazy" sizes="132px" unoptimized={image.thumbnail.startsWith("http")} />
         </button>
-        {image.caption && <figcaption>{image.caption}</figcaption>}
       </figure>
     )}</div>
 
