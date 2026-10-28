@@ -1,4 +1,5 @@
 import mottikImages from "./mottik-images.json";
+import mottikJapaneseImages from "./mottik-japanese-images.json";
 
 export const defaultDescription = "Innovation and Invention in business, Mott Research leads the way in business innovation. Mott Research focuses on inventing and innovation.";
 export const defaultKeywords = "innovation,invention,inventions,inventors,inventing,innovated,innovating,business innovation,innovation business,innovation and business,innovation in business,business and innovation,innov,inven,inventive,world of invention,a new invention,new invention,invention new,inventions new,new inventions,invents";
@@ -17,6 +18,7 @@ export type PageData = {
   description?: string; keywords?: string; externalLink?: { label: string; href: string };
   contact?: boolean; products?: ProductCard[]; videoId?: string; videos?: boolean; sideVideos?: SideVideo[];
   galleryMode?: "lightbox" | "logos";
+  gallerySections?: { title: string; images: GalleryImage[] }[];
 };
 
 export const pages: Record<string, PageData> = {
@@ -112,7 +114,6 @@ export const pages: Record<string, PageData> = {
       { thumbnail: galleryAsset("toy-1.jpg"), full: galleryAsset("toy-1-full.jpg"), alt: "Mottik toy bricks model" },
       { thumbnail: galleryAsset("toy-2.jpg"), full: galleryAsset("toy-2-full.jpg"), alt: "Mottik construction pieces" },
       { thumbnail: galleryAsset("toy-3.jpg"), full: galleryAsset("toy-3-full.jpg"), alt: "Mottik toy brick set" },
-      { thumbnail: galleryAsset("toy-4.jpg"), full: galleryAsset("toy-4-full.jpg"), alt: "Mottik sumo model" },
       {
         thumbnail: "/images/john-giant-mighty-mottik.jpg",
         full: "/images/john-giant-mighty-mottik.jpg",
@@ -120,7 +121,13 @@ export const pages: Record<string, PageData> = {
         caption: "John having fun testing the Giant Mighty Mottik range. Available soon.",
       },
       ...mottikImages,
-    ], videos: true,
+    ], gallerySections: [{
+      title: "Japanese Themed Models",
+      images: [
+        { thumbnail: galleryAsset("toy-4.jpg"), full: galleryAsset("toy-4-full.jpg"), alt: "Mottik sumo model" },
+        ...mottikJapaneseImages,
+      ],
+    }], videos: true,
   },
   "popular-inventions": {
     title: "Mott Research - Popular Inventions", heading: "Popular Inventions", image: "/images/popular-square.png",

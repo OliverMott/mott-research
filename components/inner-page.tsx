@@ -12,8 +12,8 @@ const otherVideos = [
   ["Mott Research Preview", "BEYOND 2000", "aired: Jan 1990", "/videos-mott-research-preview"],
 ] as const;
 
-function Gallery({ images }: { images: NonNullable<PageData["gallery"]> }) {
-  return <><h3 className="subheading">Images</h3><GalleryLightbox images={images} /></>;
+function Gallery({ images, title = "Images" }: { images: NonNullable<PageData["gallery"]>; title?: string }) {
+  return <><h3 className="subheading">{title}</h3><GalleryLightbox images={images} /></>;
 }
 
 function LogoGallery({ images }: { images: NonNullable<PageData["gallery"]> }) {
@@ -64,6 +64,7 @@ export function InnerPage({ page }: { page: PageData }) {
         {page.contact && <ContactDetails />}
         {page.products && <Products items={page.products} />}
         {page.gallery && (page.galleryMode === "logos" ? <LogoGallery images={page.gallery} /> : <Gallery images={page.gallery} />)}
+        {page.gallerySections?.map((section) => <Gallery key={section.title} title={section.title} images={section.images} />)}
       </>}
     </article>
     {!page.videoId && <aside className="video-sidebar"><SectionTitle>Videos</SectionTitle><p className="youtube-copy">View the <a href="https://www.youtube.com/@mottresearchinvent/videos" target="_blank" rel="noopener noreferrer">Mott Research YouTube</a> Channel</p>{page.sideVideos ? <VideoThumbnails videos={page.sideVideos} /> : <VideoCards />}</aside>}
